@@ -1,0 +1,33 @@
+
+
+<h1>Creador de Color</h1>
+
+<table>
+
+  <tbody>
+    <div>
+      
+      <div>
+        <input name="rojo" id="red" type="text" value="0" class="dial" data-max="200">
+        <input name="verde" id="green" type="text" value="0" class="dial" data-max="200">
+        <input name="azul" id="blue" type="text" value="0" class="dial" data-max="200">
+      </div>
+      <div></div>
+      <div style=" margin: 25px; width: 550px; height: 300px" id="color-result"></div>
+      <div id="card-text"></div>
+      
+
+        <script>
+          $(function() {
+              $(".dial").knob({
+                'change': function() {
+                  var rgb_result = 'rgb(' + $('#red').val() + ', ' + $('#green').val() + ', ' + $('#blue').val() + ')';
+                  $('#color-result').css('background-color',rgb_result);
+                  $('#card-text').text(rgb_result);
+                }
+              });
+          });
+        </script>
+    </div>
+  </tbody>
+</table>
